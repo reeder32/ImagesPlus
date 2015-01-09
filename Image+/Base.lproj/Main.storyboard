@@ -1,25 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGo-Wj-u8N">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="vlC-gN-WEN">
+                                        <connections>
+                                            <action selector="showActions:" destination="vXZ-lx-hvc" id="UVb-l0-Zen"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1aL-H4-9XB"/>
+                                    <barButtonItem systemItem="add" id="JkC-dn-xgO">
+                                        <connections>
+                                            <action selector="showAddImagaes:" destination="vXZ-lx-hvc" id="OTq-at-Tic"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fd2-pK-8fK">
+                                <rect key="frame" x="0.0" y="19" width="320" height="505"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fd2-pK-8fK" firstAttribute="leading" secondItem="DGo-Wj-u8N" secondAttribute="leading" id="AOl-nD-f0x"/>
+                            <constraint firstItem="DGo-Wj-u8N" firstAttribute="top" secondItem="fd2-pK-8fK" secondAttribute="bottom" id="BJH-8k-f2y"/>
+                            <constraint firstItem="DGo-Wj-u8N" firstAttribute="trailing" secondItem="fd2-pK-8fK" secondAttribute="trailing" id="QGg-3s-HBf"/>
+                            <constraint firstItem="DGo-Wj-u8N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="U6H-uT-qPh"/>
+                            <constraint firstAttribute="trailing" secondItem="fd2-pK-8fK" secondAttribute="trailing" id="cFX-d8-hxm"/>
+                            <constraint firstItem="fd2-pK-8fK" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="19" id="mjE-df-tOq"/>
+                            <constraint firstItem="DGo-Wj-u8N" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="zNX-ec-9eR"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="actionButton" destination="vlC-gN-WEN" id="U0d-cY-jeg"/>
+                        <outlet property="imageView" destination="fd2-pK-8fK" id="cZT-TG-Acf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="678" y="509"/>
         </scene>
     </scenes>
 </document>
