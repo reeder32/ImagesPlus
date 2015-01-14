@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CLImageEditor.h"
+#import <MessageUI/MessageUI.h>
 
 @interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 

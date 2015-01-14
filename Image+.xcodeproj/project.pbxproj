@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2705CED11A64D4DE00A0E741 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2705CED01A64D4DE00A0E741 /* MessageUI.framework */; };
 		27560E3A1A5F766B00B52A25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27560E391A5F766B00B52A25 /* main.m */; };
 		27560E3D1A5F766B00B52A25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27560E3C1A5F766B00B52A25 /* AppDelegate.m */; };
 		27560E401A5F766B00B52A25 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27560E3F1A5F766B00B52A25 /* ViewController.m */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2705CED01A64D4DE00A0E741 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		27560E341A5F766B00B52A25 /* Image+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27560E381A5F766B00B52A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27560E391A5F766B00B52A25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2705CED11A64D4DE00A0E741 /* MessageUI.framework in Frameworks */,
 				27560ED71A5F903600B52A25 /* CoreImage.framework in Frameworks */,
 				27560ED51A5F902C00B52A25 /* CoreGraphics.framework in Frameworks */,
 				27560ED31A5F902200B52A25 /* Accelerate.framework in Frameworks */,
@@ -175,6 +178,7 @@
 		27560E2B1A5F766B00B52A25 = {
 			isa = PBXGroup;
 			children = (
+				2705CED01A64D4DE00A0E741 /* MessageUI.framework */,
 				27560ED61A5F903600B52A25 /* CoreImage.framework */,
 				27560ED41A5F902C00B52A25 /* CoreGraphics.framework */,
 				27560ED21A5F902200B52A25 /* Accelerate.framework */,
@@ -742,6 +746,7 @@
 				27560E591A5F766B00B52A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27560E5A1A5F766B00B52A25 /* Build configuration list for PBXNativeTarget "Image+Tests" */ = {
 			isa = XCConfigurationList;
@@ -750,6 +755,7 @@
 				27560E5C1A5F766B00B52A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
