@@ -52,6 +52,11 @@
 		27560ED31A5F902200B52A25 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27560ED21A5F902200B52A25 /* Accelerate.framework */; };
 		27560ED51A5F902C00B52A25 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27560ED41A5F902C00B52A25 /* CoreGraphics.framework */; };
 		27560ED71A5F903600B52A25 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27560ED61A5F903600B52A25 /* CoreImage.framework */; };
+		276388061A69C7D40037BFF7 /* save_to_library.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388011A69C7D40037BFF7 /* save_to_library.png */; };
+		276388071A69C7D40037BFF7 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388021A69C7D40037BFF7 /* email.png */; };
+		276388081A69C7D40037BFF7 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388031A69C7D40037BFF7 /* edit.png */; };
+		276388091A69C7D40037BFF7 /* revert_to_original.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388041A69C7D40037BFF7 /* revert_to_original.png */; };
+		2763880A1A69C7D40037BFF7 /* discard.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388051A69C7D40037BFF7 /* discard.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +156,11 @@
 		27560ED21A5F902200B52A25 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		27560ED41A5F902C00B52A25 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		27560ED61A5F903600B52A25 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		276388011A69C7D40037BFF7 /* save_to_library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save_to_library.png; sourceTree = "<group>"; };
+		276388021A69C7D40037BFF7 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		276388031A69C7D40037BFF7 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		276388041A69C7D40037BFF7 /* revert_to_original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revert_to_original.png; sourceTree = "<group>"; };
+		276388051A69C7D40037BFF7 /* discard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discard.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +226,7 @@
 		27560E371A5F766B00B52A25 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				276388001A69C6530037BFF7 /* images */,
 				27560E381A5F766B00B52A25 /* Info.plist */,
 				27560E391A5F766B00B52A25 /* main.m */,
 			);
@@ -419,6 +430,18 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		276388001A69C6530037BFF7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				276388011A69C7D40037BFF7 /* save_to_library.png */,
+				276388021A69C7D40037BFF7 /* email.png */,
+				276388031A69C7D40037BFF7 /* edit.png */,
+				276388041A69C7D40037BFF7 /* revert_to_original.png */,
+				276388051A69C7D40037BFF7 /* discard.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,10 +522,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276388081A69C7D40037BFF7 /* edit.png in Resources */,
+				276388061A69C7D40037BFF7 /* save_to_library.png in Resources */,
 				27560E431A5F766B00B52A25 /* Main.storyboard in Resources */,
+				276388071A69C7D40037BFF7 /* email.png in Resources */,
 				27560EB01A5F8FDD00B52A25 /* CLImageEditor.bundle in Resources */,
 				27560E481A5F766B00B52A25 /* LaunchScreen.xib in Resources */,
 				27560E451A5F766B00B52A25 /* Images.xcassets in Resources */,
+				2763880A1A69C7D40037BFF7 /* discard.png in Resources */,
+				276388091A69C7D40037BFF7 /* revert_to_original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

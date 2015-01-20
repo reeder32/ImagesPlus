@@ -26,15 +26,11 @@
         
     }
     
-    //UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc]
-                                       // initWithTarget: self action: @selector(iveBeenTouched:)];
-    //tapImage.numberOfTapsRequired = 1;
-    
-    //[self.view addGestureRecognizer:tapImage];
-}
+   }
 
 #pragma -mark Action Options Action Sheet
 - (IBAction)showActions:(id)sender {
+    
    
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
@@ -67,6 +63,7 @@
         
         [self sendEmail];
     }];
+        
     
     UIAlertAction *edit= [UIAlertAction actionWithTitle:@"Edit" style:UIAlertActionStyleDefault handler:^(UIAlertAction *edit) {
         
@@ -145,6 +142,7 @@ error usingContextInfo:(void*)ctxInfo {
     }
 
 }
+
 
 -(void)editPhoto{
     
@@ -271,19 +269,18 @@ error usingContextInfo:(void*)ctxInfo {
     [editor dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma -mark Touch Guestures
-//-(void)iveBeenTouched:(UIGestureRecognizer *)guesture{
-//    
-//    if (self.imageView.image != nil) {
-//        [self presentImageEditorWithImage:self.imageView.image];
-//    }
-//}
+
 
 #pragma -mark didReceiveMemoryWarning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
 }
+
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    
+}
+
 
 #pragma -mark Mail Composer
 
@@ -315,3 +312,4 @@ error usingContextInfo:(void*)ctxInfo {
 }
 
 @end
+
