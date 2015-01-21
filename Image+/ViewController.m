@@ -90,7 +90,9 @@
 
 }
 
-/*-(void)saveImageToLibrary{
+/* Unused edit options to be used with action controller. I implemented ActivityController to handle these methods.
+ 
+ -(void)saveImageToLibrary{
     if (self.imageView.image != nil) {
         UIImageWriteToSavedPhotosAlbum (self.imageView.image, self, @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), NULL);
     }
@@ -138,6 +140,8 @@ error usingContextInfo:(void*)ctxInfo {
 }
 */
 
+
+#pragma -mark Edit Option Methods
 -(void)editPicture{
     
     [self presentImageEditorWithImage:self.imageView.image];
@@ -274,9 +278,11 @@ error usingContextInfo:(void*)ctxInfo {
 }
 
 
-#pragma -mark Mail Composer
+#pragma -mark Un-used Mail Composer
 
--(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+/* Unused due to implementation of activity controller
+ 
+ -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
     
     NSString *message;
     
@@ -302,6 +308,6 @@ error usingContextInfo:(void*)ctxInfo {
     [uac addAction:okAction];
     [self presentViewController:uac animated:YES completion:nil];
 }
-
+*/
 @end
 
