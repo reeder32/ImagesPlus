@@ -20,12 +20,18 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGo-Wj-u8N">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="action" id="vlC-gN-WEN">
+                                    <barButtonItem systemItem="action" id="bLZ-xu-VnZ">
                                         <connections>
-                                            <action selector="showActions:" destination="vXZ-lx-hvc" id="UVb-l0-Zen"/>
+                                            <action selector="actionButton:" destination="vXZ-lx-hvc" id="EjB-QV-k6T"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1aL-H4-9XB"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pGf-EA-R0a"/>
+                                    <barButtonItem systemItem="edit" id="vlC-gN-WEN">
+                                        <connections>
+                                            <action selector="editPhoto:" destination="vXZ-lx-hvc" id="yGV-GT-412"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HaF-iJ-BVv"/>
                                     <barButtonItem systemItem="add" id="JkC-dn-xgO">
                                         <connections>
                                             <action selector="showAddImagaes:" destination="vXZ-lx-hvc" id="OTq-at-Tic"/>
@@ -51,7 +57,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="actionButton" destination="vlC-gN-WEN" id="U0d-cY-jeg"/>
+                        <outlet property="actionButton" destination="bLZ-xu-VnZ" id="h9p-wf-lY7"/>
+                        <outlet property="editPhoto" destination="vlC-gN-WEN" id="E9f-IJ-4nN"/>
                         <outlet property="imageView" destination="fd2-pK-8fK" id="cZT-TG-Acf"/>
                     </connections>
                 </viewController>

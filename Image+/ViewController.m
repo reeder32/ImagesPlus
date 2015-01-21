@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     if (!self.imageView.image) {
+        self.editPhoto.enabled = NO;
         self.actionButton.enabled = NO;
         self.imageView.image = nil;
         
@@ -28,46 +29,40 @@
     
    }
 
+#pragma -mark ActivityController
+
+
+//Remember to add property UIActivityController as a property in .h file
+- (IBAction)actionButton:(id)sender {
+    UIImage *img = self.imageView.image;
+    
+    self.activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[img] applicationActivities:nil];
+    
+    [self presentViewController:self.activityViewController animated:YES completion:nil];
+}
+    
+
+
+
 #pragma -mark Action Options Action Sheet
-- (IBAction)showActions:(id)sender {
+- (IBAction)editPhoto:(id)sender {
     
    
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
         
-        UIAlertView *uav = [[UIAlertView alloc] initWithTitle:@"Image Options" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Save to Library", @"Email",@"Edit", @"Revert to Original", @"Discard Image", nil];
+        UIAlertView *uav = [[UIAlertView alloc] initWithTitle:@"Edit Image" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Edit", @"Revert to Original", @"Discard Image", nil];
         
         [uav show];
  
         
     } else {
     
-    UIAlertController *actionOptions = [UIAlertController alertControllerWithTitle:@"Image Options" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *editPhotoOptions = [UIAlertController alertControllerWithTitle:@"Image Options" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     
+    UIAlertAction *edit = [UIAlertAction actionWithTitle:@"Edit" style:UIAlertActionStyleDefault handler:^(UIAlertAction *edit) {
         
-    UIAlertAction *saveToLibrary = [UIAlertAction actionWithTitle:@"Save to Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *saveToLibrary) {
-        
-        UIAlertController *save = [UIAlertController alertControllerWithTitle:@"Save Image" message:@"Save Image to Library" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-            
-        }];
-        
-        [save addAction:ok];
-        [self presentViewController:save animated:YES completion:nil];
-        [self saveImageToLibrary];
-    }];
-
-    UIAlertAction *email= [UIAlertAction actionWithTitle:@"Email" style:UIAlertActionStyleDefault handler:^(UIAlertAction *email) {
-        
-        [self sendEmail];
-    }];
-        
-    
-    UIAlertAction *edit= [UIAlertAction actionWithTitle:@"Edit" style:UIAlertActionStyleDefault handler:^(UIAlertAction *edit) {
-        
-        [self editPhoto];
+        [self editPicture];
     }];
     
     UIAlertAction *revertToOriginal= [UIAlertAction actionWithTitle:@"Revert to Original" style:UIAlertActionStyleDefault handler:^(UIAlertAction *revertToOriginal) {
@@ -84,19 +79,18 @@
      
     }];
     
-    [actionOptions addAction:saveToLibrary];
-    [actionOptions addAction:email];
-    [actionOptions addAction:edit];
-    [actionOptions addAction:revertToOriginal];
-    [actionOptions addAction:discard];
-    [actionOptions addAction:cancel];
     
-    [self presentViewController:actionOptions animated:YES completion:NULL];
+    [editPhotoOptions addAction:edit];
+    [editPhotoOptions addAction:revertToOriginal];
+    [editPhotoOptions addAction:discard];
+    [editPhotoOptions addAction:cancel];
+    
+    [self presentViewController:editPhotoOptions animated:YES completion:NULL];
     }
 
 }
 
--(void)saveImageToLibrary{
+/*-(void)saveImageToLibrary{
     if (self.imageView.image != nil) {
         UIImageWriteToSavedPhotosAlbum (self.imageView.image, self, @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), NULL);
     }
@@ -142,9 +136,9 @@ error usingContextInfo:(void*)ctxInfo {
     }
 
 }
+*/
 
-
--(void)editPhoto{
+-(void)editPicture{
     
     [self presentImageEditorWithImage:self.imageView.image];
 }
@@ -158,6 +152,7 @@ error usingContextInfo:(void*)ctxInfo {
     
     self.imageView.image = nil;
     self.actionButton.enabled = NO;
+    self.editPhoto.enabled = NO;
 }
 
 
@@ -244,6 +239,7 @@ error usingContextInfo:(void*)ctxInfo {
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     self.actionButton.enabled = YES;
+    self.editPhoto.enabled = YES;
     
     UIImage *chosenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
@@ -274,10 +270,6 @@ error usingContextInfo:(void*)ctxInfo {
 #pragma -mark didReceiveMemoryWarning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
-}
-
--(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
     
 }
 
