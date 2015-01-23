@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CLImageEditor.h"
 #import <MessageUI/MessageUI.h>
+#import "AppDelegate.h"
 
 @interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate,
 MFMailComposeViewControllerDelegate>
@@ -16,13 +17,16 @@ MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *editPhoto;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButton;
+@property (weak, nonatomic) IBOutlet UILabel *imageLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *arrowImage;
 @property (strong, nonatomic) UIActivityViewController *activityViewController;
 
 @property UIImage *originalImage;
+
 
 @end
 

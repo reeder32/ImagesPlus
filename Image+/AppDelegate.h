@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property UIViewController *vc;
+
 
 @end
 

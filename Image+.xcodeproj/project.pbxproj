@@ -57,6 +57,7 @@
 		276388081A69C7D40037BFF7 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388031A69C7D40037BFF7 /* edit.png */; };
 		276388091A69C7D40037BFF7 /* revert_to_original.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388041A69C7D40037BFF7 /* revert_to_original.png */; };
 		2763880A1A69C7D40037BFF7 /* discard.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388051A69C7D40037BFF7 /* discard.png */; };
+		27B4F31B1A72D15C00F79FCB /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B4F31A1A72D15C00F79FCB /* arrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,7 @@
 		276388031A69C7D40037BFF7 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		276388041A69C7D40037BFF7 /* revert_to_original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revert_to_original.png; sourceTree = "<group>"; };
 		276388051A69C7D40037BFF7 /* discard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discard.png; sourceTree = "<group>"; };
+		27B4F31A1A72D15C00F79FCB /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +438,7 @@
 				276388011A69C7D40037BFF7 /* save_to_library.png */,
 				276388021A69C7D40037BFF7 /* email.png */,
 				276388031A69C7D40037BFF7 /* edit.png */,
+				27B4F31A1A72D15C00F79FCB /* arrow.png */,
 				276388041A69C7D40037BFF7 /* revert_to_original.png */,
 				276388051A69C7D40037BFF7 /* discard.png */,
 			);
@@ -525,6 +528,7 @@
 				276388081A69C7D40037BFF7 /* edit.png in Resources */,
 				276388061A69C7D40037BFF7 /* save_to_library.png in Resources */,
 				27560E431A5F766B00B52A25 /* Main.storyboard in Resources */,
+				27B4F31B1A72D15C00F79FCB /* arrow.png in Resources */,
 				276388071A69C7D40037BFF7 /* email.png in Resources */,
 				27560EB01A5F8FDD00B52A25 /* CLImageEditor.bundle in Resources */,
 				27560E481A5F766B00B52A25 /* LaunchScreen.xib in Resources */,
@@ -705,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Image+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -715,6 +720,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Image+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,6 +10,7 @@
 
 
 
+
 @interface ViewController ()
 <CLImageEditorDelegate>
 
@@ -20,14 +21,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (!self.imageView.image) {
-        self.editPhoto.enabled = NO;
+        if (!self.imageView.image) {
+        self.editButton.enabled = NO;
         self.actionButton.enabled = NO;
         self.imageView.image = nil;
+            
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(discardImage) name:UIApplicationDidEnterBackgroundNotification object:nil];
         
     }
     
    }
+
+
 
 #pragma -mark ActivityController
 
@@ -45,7 +50,7 @@
 
 
 #pragma -mark Action Options Action Sheet
-- (IBAction)editPhoto:(id)sender {
+- (IBAction)editButton:(id)sender {
     
    
     
@@ -57,8 +62,21 @@
  
         
     } else {
+        
+        
+    UIAlertController *editPhotoOptions = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertController *editPhotoOptions = [UIAlertController alertControllerWithTitle:@"Image Options" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    NSMutableAttributedString *attributedTitle = [[NSMutableAttributedString alloc] initWithString:@"Image Options"];
+    [attributedTitle addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0, attributedTitle.length)];
+    
+    [attributedTitle addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleThick] range:NSMakeRange(0, attributedTitle.length)];
+    [attributedTitle addAttribute:NSUnderlineColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0, attributedTitle.length)];
+    
+    [attributedTitle addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:24.0] range:NSMakeRange(0, attributedTitle.length)];
+    
+    [editPhotoOptions setValue:attributedTitle forKey:@"attributedTitle"];
+    
+        
     
     UIAlertAction *edit = [UIAlertAction actionWithTitle:@"Edit" style:UIAlertActionStyleDefault handler:^(UIAlertAction *edit) {
         
@@ -155,8 +173,10 @@ error usingContextInfo:(void*)ctxInfo {
 -(void)discardImage{
     
     self.imageView.image = nil;
+    self.imageLabel.hidden = NO;
+    self.arrowImage.hidden = NO;
     self.actionButton.enabled = NO;
-    self.editPhoto.enabled = NO;
+    self.editButton.enabled = NO;
 }
 
 
@@ -170,8 +190,21 @@ error usingContextInfo:(void*)ctxInfo {
         [uav show];
 
     } else {
+        
+       
+        
+    UIAlertController *addMedia = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertController *addMedia = [UIAlertController alertControllerWithTitle:@"Add Image" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    NSMutableAttributedString *attributedTitle = [[NSMutableAttributedString alloc] initWithString:@"Add Image"];
+    
+    [attributedTitle addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:24.0] range:NSMakeRange(0, attributedTitle.length)];
+    [attributedTitle addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0, attributedTitle.length)];
+        
+    [attributedTitle addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleThick] range:NSMakeRange(0, attributedTitle.length)];
+    [attributedTitle addAttribute:NSUnderlineColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0, attributedTitle.length)];
+        
+    [addMedia setValue:attributedTitle forKey:@"attributedTitle"];
+        
     
     UIAlertAction *library = [UIAlertAction actionWithTitle:@"Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *library) {
         [self chooseImageFromLibrary];
@@ -190,7 +223,10 @@ error usingContextInfo:(void*)ctxInfo {
     [addMedia addAction:library];
     [addMedia addAction:camera];
     [addMedia addAction:cancel];
-    
+        
+        
+    self.imageLabel.hidden = YES;
+    self.arrowImage.hidden = YES;
     [self presentViewController:addMedia animated:YES completion:NULL];
     }
     
@@ -213,8 +249,7 @@ error usingContextInfo:(void*)ctxInfo {
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-    
+        
     [self presentViewController:picker animated:YES completion:NULL];
         
     } else {
@@ -243,7 +278,7 @@ error usingContextInfo:(void*)ctxInfo {
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     self.actionButton.enabled = YES;
-    self.editPhoto.enabled = YES;
+    self.editButton.enabled = YES;
     
     UIImage *chosenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
@@ -254,10 +289,14 @@ error usingContextInfo:(void*)ctxInfo {
     
 
     [picker pushViewController:editor animated:YES];
-    
+        
 }
 
+
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    
+    self.editButton.enabled = NO;
+    self.actionButton.enabled = NO;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
@@ -266,7 +305,9 @@ error usingContextInfo:(void*)ctxInfo {
 - (void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
 {
     _imageView.image = image;
+    
     [editor dismissViewControllerAnimated:YES completion:nil];
+   
 }
 
 
@@ -309,5 +350,6 @@ error usingContextInfo:(void*)ctxInfo {
     [self presentViewController:uac animated:YES completion:nil];
 }
 */
+
 @end
 
