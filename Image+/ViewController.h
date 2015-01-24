@@ -22,6 +22,8 @@ MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionButton;
 @property (weak, nonatomic) IBOutlet UILabel *imageLabel;
 
+
+
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImage;
 @property (strong, nonatomic) UIActivityViewController *activityViewController;
 

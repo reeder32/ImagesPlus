@@ -57,7 +57,9 @@
 		276388081A69C7D40037BFF7 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388031A69C7D40037BFF7 /* edit.png */; };
 		276388091A69C7D40037BFF7 /* revert_to_original.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388041A69C7D40037BFF7 /* revert_to_original.png */; };
 		2763880A1A69C7D40037BFF7 /* discard.png in Resources */ = {isa = PBXBuildFile; fileRef = 276388051A69C7D40037BFF7 /* discard.png */; };
+		277D88B01A73347F006715E0 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 277D88AF1A73347F006715E0 /* camera.png */; };
 		27B4F31B1A72D15C00F79FCB /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B4F31A1A72D15C00F79FCB /* arrow.png */; };
+		27B4F31D1A72D4A100F79FCB /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 27B4F31C1A72D4A100F79FCB /* arrow_left.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,7 +164,9 @@
 		276388031A69C7D40037BFF7 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		276388041A69C7D40037BFF7 /* revert_to_original.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = revert_to_original.png; sourceTree = "<group>"; };
 		276388051A69C7D40037BFF7 /* discard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discard.png; sourceTree = "<group>"; };
+		277D88AF1A73347F006715E0 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		27B4F31A1A72D15C00F79FCB /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		27B4F31C1A72D4A100F79FCB /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,8 +439,10 @@
 		276388001A69C6530037BFF7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				277D88AF1A73347F006715E0 /* camera.png */,
 				276388011A69C7D40037BFF7 /* save_to_library.png */,
 				276388021A69C7D40037BFF7 /* email.png */,
+				27B4F31C1A72D4A100F79FCB /* arrow_left.png */,
 				276388031A69C7D40037BFF7 /* edit.png */,
 				27B4F31A1A72D15C00F79FCB /* arrow.png */,
 				276388041A69C7D40037BFF7 /* revert_to_original.png */,
@@ -534,6 +540,8 @@
 				27560E481A5F766B00B52A25 /* LaunchScreen.xib in Resources */,
 				27560E451A5F766B00B52A25 /* Images.xcassets in Resources */,
 				2763880A1A69C7D40037BFF7 /* discard.png in Resources */,
+				27B4F31D1A72D4A100F79FCB /* arrow_left.png in Resources */,
+				277D88B01A73347F006715E0 /* camera.png in Resources */,
 				276388091A69C7D40037BFF7 /* revert_to_original.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

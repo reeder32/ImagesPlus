@@ -21,13 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(discardImage) name:UIApplicationDidEnterBackgroundNotification object:nil];
+
         if (!self.imageView.image) {
         self.editButton.enabled = NO;
         self.actionButton.enabled = NO;
         self.imageView.image = nil;
             
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(discardImage) name:UIApplicationDidEnterBackgroundNotification object:nil];
-        
+            
     }
     
    }
@@ -182,6 +183,9 @@ error usingContextInfo:(void*)ctxInfo {
 
 #pragma -mark Image Options
 - (IBAction)showAddImagaes:(id)sender {
+    self.imageLabel.hidden = YES;
+    self.arrowImage.hidden = YES;
+
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
         
@@ -191,7 +195,7 @@ error usingContextInfo:(void*)ctxInfo {
 
     } else {
         
-       
+    
         
     UIAlertController *addMedia = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -216,7 +220,8 @@ error usingContextInfo:(void*)ctxInfo {
     
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *cancel) {
-        NSLog(@"Cancel Button Pressed");
+        self.arrowImage.hidden = NO;
+        self.imageLabel.hidden = NO;
     }];
     
     
@@ -225,9 +230,10 @@ error usingContextInfo:(void*)ctxInfo {
     [addMedia addAction:cancel];
         
         
-    self.imageLabel.hidden = YES;
-    self.arrowImage.hidden = YES;
+    
     [self presentViewController:addMedia animated:YES completion:NULL];
+        
+    
     }
     
 }
@@ -247,7 +253,7 @@ error usingContextInfo:(void*)ctxInfo {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
     UIImagePickerController *picker = [[UIImagePickerController alloc]init];
     picker.delegate = self;
-    picker.allowsEditing = YES;
+    picker.allowsEditing = NO;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         
     [self presentViewController:picker animated:YES completion:NULL];
@@ -289,6 +295,7 @@ error usingContextInfo:(void*)ctxInfo {
     
 
     [picker pushViewController:editor animated:YES];
+    
         
 }
 
